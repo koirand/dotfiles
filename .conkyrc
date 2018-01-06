@@ -1,0 +1,83 @@
+# conky configuration
+#
+# The list of variables has been removed from this file in favour
+# of keeping the documentation more maintainable.
+# Check http://conky.sf.net for an up-to-date-list.
+#
+# For ideas about how to modify conky, please see:
+# http://crunchbanglinux.org/forums/topic/59/my-conky-config/
+#
+# For help with conky, please see:
+# http://crunchbanglinux.org/forums/topic/2047/conky-help/
+#
+# Enjoy! :)
+##############################################
+# Settings
+##############################################
+background yes
+use_xft yes
+xftfont Sans:size=10
+xftalpha 1
+update_interval 1.0
+total_run_times 0
+own_window yes
+#own_window_transparent yes
+#own_window_type desktop
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+own_window_argb_visual yes
+own_window_argb_value 100
+double_buffer yes
+minimum_size 200 200
+maximum_width 200
+draw_shades yes
+draw_outline no
+draw_borders no
+draw_graph_borders yes
+default_color white
+default_shade_color black
+default_outline_color white
+alignment top_right
+gap_x 0
+gap_y 56
+no_buffers yes
+uppercase no
+cpu_avg_samples 2
+override_utf8_locale no
+
+TEXT
+${font Ricty:bold:size=10}SYSTEM ${hr 2}
+${font Ricty:normal:size=10}$sysname $kernel $alignr $machine
+Host:$alignr$nodename
+Uptime:$alignr$uptime
+File System: $alignr${fs_type}
+
+${font Ricty:bold:size=10}PROCESSORS ${hr 2}
+${font Ricty:normal:size=10}${cpugraph cpu1}
+CPU1: ${cpu cpu1}% ${cpubar cpu1}
+
+${font Ricty:bold:size=10}MEMORY ${hr 2}
+${font Ricty:normal:size=10}RAM $alignc $mem / $memmax $alignr $memperc%
+$membar
+
+${font Ricty:bold:size=10}DISKS ${hr 2}
+${font Ricty:normal:size=10}/ $alignc ${fs_used /} / ${fs_size /} $alignr ${fs_used_perc /}%
+${fs_bar /}
+SWAP $alignc ${swap} / ${swapmax} $alignr ${swapperc}%
+${swapbar}
+
+${font Ricty:bold:size=10}TOP P0ROCESSES ${hr 2}
+${font Ricty:normal:size=10}${top_mem name 1}${alignr}${top mem 1} %
+${top_mem name 2}${alignr}${top mem 2} %
+${top_mem name 3}${alignr}${top mem 3} %
+${top_mem name 4}${alignr}${top mem 4} %
+${top_mem name 5}${alignr}${top mem 5} %
+
+${font Ricty:bold:size=10}NETWORK ${hr 2}
+${font Ricty:normal:size=10}IP address: $alignr ${addr wlan0}
+ESSID: $alignr ${wireless_essid wlan0}
+Connection quality: $alignr ${wireless_link_qual_perc wlan0}%
+${downspeedgraph wlan0}
+DLS:${downspeed wlan0} kb/s $alignr total: ${totaldown wlan0}
+${upspeedgraph wlan0}
+ULS:${upspeed wlan0} kb/s $alignr total: ${totalup wlan0}
+

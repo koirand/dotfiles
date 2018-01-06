@@ -1,0 +1,6 @@
+[color]
+	ui = true
+[core]
+	quotepath = false
+    whitespace = cr-at-eol
+    ignorecase = false
