@@ -80,7 +80,7 @@ augroup END
 "----------------------------------------------------------------------
 " copy, paste
 "----------------------------------------------------------------------
-if has('win32') || has('win64') || has('mac')
+if has('win32') || has('win64') || has('win32unix') || has('mac')
     set clipboard=unnamed
 else
     set clipboard=unnamed,unnamedplus
@@ -152,7 +152,7 @@ if has('mac')
 elseif has('unix')
     set gfn=Ricty\ 12
 
-elseif has('win32') || has('win32unix')
+elseif has('win32') || has('win64') || has('win32unix')
     set guifont=Ricty:h12
     set renderoptions=type:directx,renmode:5
 endif
