@@ -4,3 +4,6 @@
 	quotepath = false
     whitespace = cr-at-eol
     ignorecase = false
+	editor = vim
+[user]
+	useConfigOnly = true
