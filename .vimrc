@@ -36,7 +36,7 @@ augroup indent
     autocmd!
     autocmd FileType html        setlocal tabstop=2 shiftwidth=2 et
     autocmd FileType css         setlocal tabstop=2 shiftwidth=2 et
-    autocmd FileType javascript  setlocal tabstop=2 shiftwidth=2 et
+    autocmd FileType javascript  setlocal tabstop=4 shiftwidth=4 et
     autocmd FileType go          setlocal tabstop=4 shiftwidth=4 noet
 augroup END
 
@@ -107,7 +107,7 @@ nnoremap <silent> <Esc><Esc> :<C-u>nohlsearch<CR>
 " system file
 "----------------------------------------------------------------------
 set nobackup
-set noswapfile
+"set noswapfile
 set noundofile
 
 "----------------------------------------------------------------------
