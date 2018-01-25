@@ -109,6 +109,7 @@ nnoremap <silent> <Esc><Esc> :<C-u>nohlsearch<CR>
 set nobackup
 "set noswapfile
 set noundofile
+set directory=~/.vim/tmp
 
 "----------------------------------------------------------------------
 " ime
@@ -199,6 +200,9 @@ if dein#load_state(s:dein_dir)
     call dein#add('tpope/vim-surround')
     call dein#add('bronson/vim-trailing-whitespace')
     call dein#add('aklt/plantuml-syntax')
+    call dein#add('dhruvasagar/vim-table-mode')
+    call dein#add('mattn/sonictemplate-vim')
+    call dein#add('simeji/winresizer')
     call dein#add('~/.vim/hz_ja.vim', {'merged': 0})
 
     call dein#end()
@@ -212,6 +216,23 @@ endif
 
 filetype plugin indent on
 syntax enable
+
+"----------------------------------------------------------------------
+" vim-table-mode
+"----------------------------------------------------------------------
+let g:table_mode_corner = '|'
+let g:table_mode_auto_align = 0
+
+"----------------------------------------------------------------------
+" sonictemplate-vim
+"----------------------------------------------------------------------
+let g:sonictemplate_vim_template_dir = '$HOME/.vim/template'
+
+"----------------------------------------------------------------------
+" winresiaer
+"----------------------------------------------------------------------
+let g:winresizer_vert_resize = 1
+let g:winresizer_horiz_resize = 1
 
 "----------------------------------------------------------------------
 " color scheme

@@ -7,3 +7,5 @@
 	editor = vim
 [user]
 	useConfigOnly = true
+[credential]
+	helper = cache --timeout=86400
