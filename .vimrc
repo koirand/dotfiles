@@ -16,7 +16,10 @@ command! Sjis cp932
 " looks
 "----------------------------------------------------------------------
 set t_Co=256
+set t_ut=
 set termguicolors
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 set number
 set numberwidth=3
 set ambiwidth=double
@@ -36,7 +39,8 @@ augroup indent
     autocmd!
     autocmd FileType html        setlocal tabstop=2 shiftwidth=2 et
     autocmd FileType css         setlocal tabstop=2 shiftwidth=2 et
-    autocmd FileType javascript  setlocal tabstop=4 shiftwidth=4 et
+    autocmd FileType javascript  setlocal tabstop=2 shiftwidth=2 et
+    autocmd FileType json        setlocal tabstop=2 shiftwidth=2 et
     autocmd FileType go          setlocal tabstop=4 shiftwidth=4 noet
 augroup END
 
@@ -172,6 +176,7 @@ endif
 "----------------------------------------------------------------------
 command! Xmlformat :%s/></>\r</g | :%s/$//g | filetype indent on | setf xml | normal gg=G
 command! Chrome :! start chrome %
+command! CheetSheet :e ~/dotfiles/.cheetsheet.md
 nnoremap <silent> <F1> :<C-u>e ~/.vimrc<CR>
 
 "----------------------------------------------------------------------
@@ -203,6 +208,8 @@ if dein#load_state(s:dein_dir)
     call dein#add('dhruvasagar/vim-table-mode')
     call dein#add('mattn/sonictemplate-vim')
     call dein#add('simeji/winresizer')
+    call dein#add('w0rp/ale')
+    call dein#add('scrooloose/nerdtree')
     call dein#add('~/.vim/hz_ja.vim', {'merged': 0})
 
     call dein#end()
@@ -220,6 +227,7 @@ syntax enable
 "----------------------------------------------------------------------
 " vim-table-mode
 "----------------------------------------------------------------------
+nnoremap <silent> <C-t> :<C-u>TableModeToggle<CR>
 let g:table_mode_corner = '|'
 let g:table_mode_auto_align = 0
 
@@ -231,8 +239,16 @@ let g:sonictemplate_vim_template_dir = '$HOME/.vim/template'
 "----------------------------------------------------------------------
 " winresiaer
 "----------------------------------------------------------------------
-let g:winresizer_vert_resize = 1
-let g:winresizer_horiz_resize = 1
+let g:winresizer_vert_resize = 5
+let g:winresizer_horiz_resize = 3
+
+"----------------------------------------------------------------------
+" ale
+"----------------------------------------------------------------------
+let g:ale_sign_column_always = 1
+let g:ale_linters = {
+            \   'javascript': ['standard'],
+            \}
 
 "----------------------------------------------------------------------
 " color scheme
