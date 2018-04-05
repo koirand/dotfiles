@@ -176,7 +176,7 @@ endif
 "----------------------------------------------------------------------
 command! Xmlformat :%s/></>\r</g | :%s/$//g | filetype indent on | setf xml | normal gg=G
 command! Chrome :! start chrome %
-command! CheetSheet :e ~/dotfiles/.cheetsheet.md
+command! CheetSheet :e ~/.cheetsheet.md
 nnoremap <silent> <F1> :<C-u>e ~/.vimrc<CR>
 
 "----------------------------------------------------------------------
@@ -201,6 +201,7 @@ if dein#load_state(s:dein_dir)
     call dein#begin(s:dein_dir)
 
     call dein#add('jdkanani/vim-material-theme')
+    call dein#add('cocopon/iceberg.vim')
     call dein#add('itchyny/lightline.vim')
     call dein#add('tpope/vim-surround')
     call dein#add('bronson/vim-trailing-whitespace')
@@ -223,6 +224,13 @@ endif
 
 filetype plugin indent on
 syntax enable
+
+"----------------------------------------------------------------------
+" lightline
+"----------------------------------------------------------------------
+let g:lightline = {
+      \ 'colorscheme': 'iceberg',
+      \ }
 
 "----------------------------------------------------------------------
 " vim-table-mode
@@ -254,5 +262,5 @@ let g:ale_linters = {
 " color scheme
 "----------------------------------------------------------------------
 set background=dark
-colorscheme material-theme
+colorscheme iceberg
 
