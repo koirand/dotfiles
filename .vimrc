@@ -177,6 +177,7 @@ endif
 command! Xmlformat :%s/></>\r</g | :%s/$//g | filetype indent on | setf xml | normal gg=G
 command! Chrome :! start chrome %
 command! CheetSheet :e ~/.cheetsheet.md
+command! Animals read!animals
 nnoremap <silent> <F1> :<C-u>e ~/.vimrc<CR>
 
 "----------------------------------------------------------------------
