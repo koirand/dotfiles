@@ -181,50 +181,23 @@ command! Animals read!animals
 nnoremap <silent> <F1> :<C-u>e ~/.vimrc<CR>
 
 "----------------------------------------------------------------------
-" dein.vim
+" vim-plug
 "----------------------------------------------------------------------
-if &compatible
-    set nocompatible
-endif
+call plug#begin('~/.vim/plugged')
 
-let s:dein_dir = expand('~/.vim/dein.vim')
-let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
-if has('vim_starting')
-    execute 'set runtimepath+=' . s:dein_repo_dir
-endif
+Plug 'jdkanani/vim-material-theme'
+Plug 'cocopon/iceberg.vim'
+Plug 'itchyny/lightline.vim'
+Plug 'tpope/vim-surround'
+Plug 'bronson/vim-trailing-whitespace'
+Plug 'aklt/plantuml-syntax'
+Plug 'dhruvasagar/vim-table-mode'
+Plug 'mattn/sonictemplate-vim'
+Plug 'simeji/winresizer'
+Plug 'w0rp/ale'
+Plug 'scrooloose/nerdtree'
 
-" install dein.vim if not found
-if !isdirectory(s:dein_repo_dir)
-    silent execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
-endif
-
-if dein#load_state(s:dein_dir)
-    call dein#begin(s:dein_dir)
-
-    call dein#add('jdkanani/vim-material-theme')
-    call dein#add('cocopon/iceberg.vim')
-    call dein#add('itchyny/lightline.vim')
-    call dein#add('tpope/vim-surround')
-    call dein#add('bronson/vim-trailing-whitespace')
-    call dein#add('aklt/plantuml-syntax')
-    call dein#add('dhruvasagar/vim-table-mode')
-    call dein#add('mattn/sonictemplate-vim')
-    call dein#add('simeji/winresizer')
-    call dein#add('w0rp/ale')
-    call dein#add('scrooloose/nerdtree')
-    call dein#add('~/.vim/hz_ja.vim', {'merged': 0})
-
-    call dein#end()
-    call dein#save_state()
-endif
-
-" plugin install
-if dein#check_install()
-  call dein#install()
-endif
-
-filetype plugin indent on
-syntax enable
+call plug#end()
 
 "----------------------------------------------------------------------
 " lightline

@@ -16,6 +16,5 @@ tags
 # viminfo
 .viminfo
 
-#dein.vim
-dein.vim/*
+plugged/*
 tmp/*
