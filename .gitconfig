@@ -1,13 +1,17 @@
 [color]
-	ui = true
+    ui = true
 [core]
-	quotepath = false
+    quotepath = false
     whitespace = cr-at-eol
     ignorecase = false
-	editor = vim
+    editor = vim
+    filemode = false
+    autocrlf = false
 [user]
-	useConfigOnly = true
-	name = koirand
-	email = ikuzak.ediok@gmail.com
+    useConfigOnly = true
+    name = koirand
+    email = ikuzak.ediok@gmail.com
 [credential]
-	helper = cache --timeout=86400
+    helper = cache --timeout=86400
+[fetch]
+    prune = true

@@ -47,6 +47,11 @@ augroup END
 set backspace=indent,eol,start
 
 "----------------------------------------------------------------------
+" mapleader
+"----------------------------------------------------------------------
+let mapleader =","
+
+"----------------------------------------------------------------------
 " move
 "----------------------------------------------------------------------
 noremap 1 ^
@@ -127,6 +132,7 @@ inoremap <silent> <ESC> <ESC>:set iminsert=0<CR>
 "----------------------------------------------------------------------
 set hidden
 set autoread
+set autowrite
 set splitbelow
 set splitright
 nnoremap <silent> <C-TAB> :bn<CR>
@@ -178,7 +184,7 @@ command! Xmlformat :%s/></>\r</g | :%s/$//g | filetype indent on | setf xml | n
 command! Chrome :! start chrome %
 command! CheetSheet :e ~/.cheetsheet.md
 command! Animals read!animals
-nnoremap <silent> <F1> :<C-u>e ~/.vimrc<CR>
+nnoremap <silent> <F1> :<C-u>sp ~/.vimrc<CR>
 
 "----------------------------------------------------------------------
 " vim-plug
@@ -196,6 +202,7 @@ Plug 'mattn/sonictemplate-vim'
 Plug 'simeji/winresizer'
 Plug 'w0rp/ale'
 Plug 'scrooloose/nerdtree'
+Plug 'fatih/vim-go'
 
 call plug#end()
 
@@ -231,6 +238,27 @@ let g:ale_sign_column_always = 1
 let g:ale_linters = {
             \   'javascript': ['standard'],
             \}
+
+
+"----------------------------------------------------------------------
+" vim-go
+"----------------------------------------------------------------------
+autocmd FileType go nmap <leader>r <Plug>(go-run)
+autocmd FileType go nmap <leader>t <Plug>(go-test)
+autocmd FileType go nmap <Leader>c <Plug>(go-coverage-toggle)
+" run :GoBuild or :GoTestCompile based on the go file
+function! s:build_go_files()
+  let l:file = expand('%')
+  if l:file =~# '^\f\+_test\.go$'
+    call go#test#Test(0, 1)
+  elseif l:file =~# '^\f\+\.go$'
+    call go#cmd#Build(0)
+  endif
+endfunction
+
+autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
+let g:go_fmt_command = "goimports"
+let g:go_snippet_case_type = "camelcase"
 
 "----------------------------------------------------------------------
 " color scheme
