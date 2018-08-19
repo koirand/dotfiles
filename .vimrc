@@ -188,6 +188,7 @@ command! Xmlformat :%s/></>\r</g | :%s/$//g | filetype indent on | setf xml | n
 command! Chrome :! start chrome %
 command! CheetSheet :e ~/.cheetsheet.md
 command! Animals read!animals
+command! Paste read!pbpaste
 nnoremap <silent> <F1> :<C-u>sp ~/.vimrc<CR>
 
 "----------------------------------------------------------------------
