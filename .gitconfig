@@ -10,7 +10,7 @@
 [user]
     useConfigOnly = true
     name = koirand
-    email = ikuzak.ediok@gmail.com
+    email = koirand.jp@gmail.com
 [credential]
     helper = cache --timeout=86400
 [fetch]

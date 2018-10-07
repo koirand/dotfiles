@@ -164,7 +164,7 @@ set laststatus=2
 " font
 "----------------------------------------------------------------------
 if has('mac')
-    set gfn=Ricty:h16
+    set gfn=Monaco:h14
 
 elseif has('unix')
     set gfn=Ricty\ 12
@@ -189,7 +189,8 @@ endif
 command! Xmlformat :%s/></>\r</g | :%s/$//g | filetype indent on | setf xml | normal gg=G
 command! Chrome :! start chrome %
 command! CheetSheet :e ~/.cheetsheet.md
-command! Animals read!animals
+command! Animals read!animals -a
+command! Paste read!pbpaste
 nnoremap <silent> <F1> :<C-u>sp ~/.vimrc<CR>
 
 "----------------------------------------------------------------------
@@ -209,6 +210,8 @@ Plug 'simeji/winresizer'
 Plug 'w0rp/ale'
 Plug 'scrooloose/nerdtree'
 Plug 'fatih/vim-go'
+Plug 'cocopon/pgmnt.vim'
+Plug 'koirand/tokyo-metro.vim'
 
 call plug#end()
 
@@ -270,5 +273,5 @@ let g:go_snippet_case_type = "camelcase"
 " color scheme
 "----------------------------------------------------------------------
 set background=dark
-colorscheme iceberg
+colorscheme tokyo-metro
 
