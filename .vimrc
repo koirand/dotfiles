@@ -17,6 +17,8 @@ command! Sjis cp932
 "----------------------------------------------------------------------
 set t_Co=256
 set t_ut=
+set t_ZH=[3m
+set t_ZR=[23m
 set termguicolors
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
@@ -41,11 +43,13 @@ set tabstop=4
 set shiftwidth=4
 augroup indent
     autocmd!
-    autocmd FileType html        setlocal tabstop=2 shiftwidth=2 et
-    autocmd FileType css         setlocal tabstop=2 shiftwidth=2 et
-    autocmd FileType javascript  setlocal tabstop=2 shiftwidth=2 et
-    autocmd FileType json        setlocal tabstop=2 shiftwidth=2 et
-    autocmd FileType go          setlocal tabstop=4 shiftwidth=4 noet
+    autocmd FileType txt         setlocal wrap
+    autocmd FileType markdown    setlocal wrap
+    autocmd FileType html        setlocal tabstop=2 shiftwidth=2 expandtab
+    autocmd FileType css         setlocal tabstop=2 shiftwidth=2 expandtab
+    autocmd FileType javascript  setlocal tabstop=2 shiftwidth=2 expandtab
+    autocmd FileType json        setlocal tabstop=2 shiftwidth=2 expandtab
+    autocmd FileType go          setlocal tabstop=4 shiftwidth=4 noexpandtab
 augroup END
 
 set backspace=indent,eol,start
@@ -164,13 +168,13 @@ set laststatus=2
 " font
 "----------------------------------------------------------------------
 if has('mac')
-    set gfn=Monaco:h14
+    set gfn=Menlo-Regular:h14
 
 elseif has('unix')
     set gfn=Ricty\ 12
 
 elseif has('win32') || has('win64') || has('win32unix')
-    set guifont=Ricty:h12
+    set gfn=Ricty:h12
     set renderoptions=type:directx,renmode:5
 endif
 
@@ -212,6 +216,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'fatih/vim-go'
 Plug 'cocopon/pgmnt.vim'
 Plug 'koirand/tokyo-metro.vim'
+Plug 'pangloss/vim-javascript'
 
 call plug#end()
 
@@ -219,8 +224,17 @@ call plug#end()
 " lightline
 "----------------------------------------------------------------------
 let g:lightline = {
-      \ 'colorscheme': 'iceberg',
-      \ }
+  \ 'colorscheme': 'tokyometro',
+  \ 'active': {
+  \   'left': [
+  \     ['mode', 'paste'],
+  \     ['readonly', 'filename', 'modified', 'ale'],
+  \   ]
+  \ },
+  \ 'component_function': {
+  \   'ale': 'ALEGetStatusLine'
+  \ }
+\ }
 
 "----------------------------------------------------------------------
 " vim-table-mode
@@ -241,13 +255,18 @@ let g:winresizer_vert_resize = 5
 let g:winresizer_horiz_resize = 3
 
 "----------------------------------------------------------------------
+" vim-javascript
+"----------------------------------------------------------------------
+let g:javascript_plugin_flow = 1
+
+"----------------------------------------------------------------------
 " ale
 "----------------------------------------------------------------------
 let g:ale_sign_column_always = 1
 let g:ale_linters = {
-            \   'javascript': ['standard'],
-            \}
-
+ \  'javascript': ['standard'],
+ \  'markdown': ['textlint'],
+ \}
 
 "----------------------------------------------------------------------
 " vim-go
