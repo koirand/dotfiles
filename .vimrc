@@ -45,10 +45,12 @@ augroup indent
     autocmd!
     autocmd FileType txt         setlocal wrap
     autocmd FileType markdown    setlocal wrap
-    autocmd FileType html        setlocal tabstop=2 shiftwidth=2 expandtab
-    autocmd FileType css         setlocal tabstop=2 shiftwidth=2 expandtab
-    autocmd FileType javascript  setlocal tabstop=2 shiftwidth=2 expandtab
-    autocmd FileType json        setlocal tabstop=2 shiftwidth=2 expandtab
+    autocmd FileType html        setlocal tabstop=2 shiftwidth=2
+    autocmd FileType css         setlocal tabstop=2 shiftwidth=2
+    autocmd FileType javascript  setlocal tabstop=2 shiftwidth=2
+    autocmd FileType json        setlocal tabstop=2 shiftwidth=2
+    autocmd FileType yaml        setlocal tabstop=2 shiftwidth=2
+    autocmd FileType toml        setlocal tabstop=2 shiftwidth=2
     autocmd FileType go          setlocal tabstop=4 shiftwidth=4 noexpandtab
 augroup END
 
