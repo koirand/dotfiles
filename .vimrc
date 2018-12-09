@@ -228,6 +228,12 @@ Plug 'pangloss/vim-javascript'
 call plug#end()
 
 "----------------------------------------------------------------------
+" NERDTree
+"----------------------------------------------------------------------
+nnoremap <silent> <C-n> :<C-u>NERDTreeToggle<CR>
+let NERDTreeShowHidden = 1
+
+"----------------------------------------------------------------------
 " lightline
 "----------------------------------------------------------------------
 let g:lightline = {
@@ -269,11 +275,8 @@ let g:javascript_plugin_flow = 1
 "----------------------------------------------------------------------
 " ale
 "----------------------------------------------------------------------
-let g:ale_sign_column_always = 1
-let g:ale_linters = {
- \  'javascript': ['eslint'],
- \  'markdown': ['textlint'],
- \}
+let g:ale_fixers = {'javascript': ['prettier_standard']}
+let g:ale_fix_on_save = 1
 
 "----------------------------------------------------------------------
 " vim-go
