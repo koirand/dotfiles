@@ -224,6 +224,7 @@ Plug 'fatih/vim-go'
 Plug 'cocopon/pgmnt.vim'
 Plug 'koirand/tokyo-metro.vim'
 Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
 
 call plug#end()
 
