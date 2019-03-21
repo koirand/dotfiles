@@ -59,7 +59,7 @@ set backspace=indent,eol,start
 "----------------------------------------------------------------------
 " mapleader
 "----------------------------------------------------------------------
-let mapleader =","
+" let mapleader =","
 
 "----------------------------------------------------------------------
 " move
@@ -95,6 +95,12 @@ augroup grep
     autocmd!
     autocmd QuickFixCmdPost *grep* cwindow
 augroup END
+
+"----------------------------------------------------------------------
+" Quickfix
+nnoremap <C-p> :cprevious<CR>
+nnoremap <C-n> :cnext<CR>
+"----------------------------------------------------------------------
 
 "----------------------------------------------------------------------
 " copy, paste
@@ -220,18 +226,18 @@ Plug 'mattn/sonictemplate-vim'
 Plug 'simeji/winresizer'
 Plug 'w0rp/ale'
 Plug 'scrooloose/nerdtree'
-Plug 'fatih/vim-go'
 Plug 'cocopon/pgmnt.vim'
 Plug 'koirand/tokyo-metro.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
+Plug 'cohama/lexima.vim'
 
 call plug#end()
 
 "----------------------------------------------------------------------
 " NERDTree
 "----------------------------------------------------------------------
-nnoremap <silent> <C-n> :<C-u>NERDTreeToggle<CR>
+nnoremap <silent> <F2> :<C-u>NERDTreeToggle<CR>
 let NERDTreeShowHidden = 1
 
 "----------------------------------------------------------------------
@@ -278,27 +284,11 @@ let g:javascript_plugin_flow = 1
 "----------------------------------------------------------------------
 let g:ale_fixers = {'javascript': ['prettier_standard']}
 let g:ale_fix_on_save = 1
+let g:ale_set_loclist = 0
+let g:ale_set_quickfix = 1
+let g:ale_open_list = 1
+let g:ale_javascript_prettier_use_local_config = 1
 let g:ale_sign_column_always = 1
-
-"----------------------------------------------------------------------
-" vim-go
-"----------------------------------------------------------------------
-autocmd FileType go nmap <leader>r <Plug>(go-run)
-autocmd FileType go nmap <leader>t <Plug>(go-test)
-autocmd FileType go nmap <Leader>c <Plug>(go-coverage-toggle)
-" run :GoBuild or :GoTestCompile based on the go file
-function! s:build_go_files()
-  let l:file = expand('%')
-  if l:file =~# '^\f\+_test\.go$'
-    call go#test#Test(0, 1)
-  elseif l:file =~# '^\f\+\.go$'
-    call go#cmd#Build(0)
-  endif
-endfunction
-
-autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
-let g:go_fmt_command = "goimports"
-let g:go_snippet_case_type = "camelcase"
 
 "----------------------------------------------------------------------
 " color scheme
