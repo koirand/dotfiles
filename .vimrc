@@ -215,12 +215,11 @@ nnoremap <silent> <F1> :<C-u>sp ~/.vimrc<CR>
 "----------------------------------------------------------------------
 call plug#begin('~/.vim/plugged')
 
-Plug 'jdkanani/vim-material-theme'
 Plug 'cocopon/iceberg.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-surround'
+Plug 'fatih/vim-go'
 Plug 'bronson/vim-trailing-whitespace'
-Plug 'aklt/plantuml-syntax'
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'mattn/sonictemplate-vim'
 Plug 'simeji/winresizer'
@@ -278,6 +277,17 @@ let g:winresizer_horiz_resize = 3
 " vim-javascript
 "----------------------------------------------------------------------
 let g:javascript_plugin_flow = 1
+
+"----------------------------------------------------------------------
+" vim-go
+"----------------------------------------------------------------------
+let g:go_fmt_command = "goimports"
+let g:go_snippet_case_type = "camelcase"
+let g:go_list_type = "quickfix"
+autocmd FileType go nmap <leader>r <Plug>(go-run)
+autocmd FileType go nmap <leader>b <Plug>(go-build)
+autocmd FileType go nmap <leader>t <Plug>(go-test)
+autocmd FileType go nmap <Leader>c <Plug>(go-coverage-toggle)
 
 "----------------------------------------------------------------------
 " ale
