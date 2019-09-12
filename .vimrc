@@ -306,3 +306,4 @@ let g:ale_sign_column_always = 1
 set background=dark
 colorscheme tokyo-metro
 
+autocmd BufNewFile,BufRead memo.txt $r !date
