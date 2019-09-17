@@ -98,9 +98,9 @@ augroup END
 
 "----------------------------------------------------------------------
 " Quickfix
+"----------------------------------------------------------------------
 nnoremap <C-p> :cprevious<CR>
 nnoremap <C-n> :cnext<CR>
-"----------------------------------------------------------------------
 
 "----------------------------------------------------------------------
 " copy, paste
@@ -206,9 +206,9 @@ endif
 command! Xmlformat :%s/></>\r</g | :%s/$//g | filetype indent on | setf xml | normal gg=G
 command! Chrome :! start chrome %
 command! CheetSheet :e ~/.cheetsheet.md
-command! Animals read!animals -a
 command! Paste read!pbpaste
 nnoremap <silent> <F1> :<C-u>sp ~/.vimrc<CR>
+autocmd BufNewFile,BufRead memo.txt $r !date
 
 "----------------------------------------------------------------------
 " vim-plug
@@ -305,5 +305,3 @@ let g:ale_sign_column_always = 1
 "----------------------------------------------------------------------
 set background=dark
 colorscheme tokyo-metro
-
-autocmd BufNewFile,BufRead memo.txt $r !date
