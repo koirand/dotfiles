@@ -208,7 +208,7 @@ command! Chrome :! start chrome %
 command! CheetSheet :e ~/.cheetsheet.md
 command! Paste read!pbpaste
 nnoremap <silent> <F1> :<C-u>sp ~/.vimrc<CR>
-autocmd BufNewFile,BufRead memo.txt $r !date
+autocmd BufNewFile,BufRead memo.txt $r !echo '--------------------------------------------------------------------------------' && date
 
 "----------------------------------------------------------------------
 " vim-plug
@@ -305,3 +305,4 @@ let g:ale_sign_column_always = 1
 "----------------------------------------------------------------------
 set background=dark
 colorscheme tokyo-metro
+
