@@ -215,21 +215,14 @@ autocmd BufNewFile,BufRead memo.txt $r !echo '----------------------------------
 "----------------------------------------------------------------------
 call plug#begin('~/.vim/plugged')
 
-Plug 'cocopon/iceberg.vim'
-Plug 'itchyny/lightline.vim'
-Plug 'tpope/vim-surround'
-Plug 'fatih/vim-go'
-Plug 'bronson/vim-trailing-whitespace'
-Plug 'dhruvasagar/vim-table-mode'
-Plug 'mattn/sonictemplate-vim'
-Plug 'simeji/winresizer'
-Plug 'w0rp/ale'
-Plug 'scrooloose/nerdtree'
-Plug 'cocopon/pgmnt.vim'
-Plug 'koirand/tokyo-metro.vim'
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
 Plug 'cohama/lexima.vim'
+Plug 'dhruvasagar/vim-table-mode'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'itchyny/lightline.vim'
+Plug 'koirand/tokyo-metro.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'simeji/winresizer'
+Plug 'tpope/vim-surround'
 
 call plug#end()
 
