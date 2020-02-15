@@ -1,23 +1,17 @@
-[color]
-    ui = true
 [core]
-    quotepath = false
-    whitespace = cr-at-eol
-    ignorecase = false
-    editor = vim
-    filemode = false
-    autocrlf = false
+	quotepath = false
+	whitespace = cr-at-eol
+	filemode = false
+	editor = vim
 [user]
-    useConfigOnly = true
-    name = koirand
-    email = koirand.jp@gmail.com
-[credential]
-    helper = cache --timeout=86400
+	name = koirand
+	email = koirand.jp@gmail.com
 [fetch]
-    prune = true
+	prune = true
 [pull]
 	ff = only
 [merge]
 	ff = false
 [push]
 	default = current
+
