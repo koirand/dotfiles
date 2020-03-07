@@ -218,6 +218,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'cohama/lexima.vim'
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'itchyny/vim-gitbranch'
 Plug 'itchyny/lightline.vim'
 Plug 'koirand/tokyo-metro.vim'
 Plug 'scrooloose/nerdtree'
@@ -240,11 +241,12 @@ let g:lightline = {
   \ 'active': {
   \   'left': [
   \     ['mode', 'paste'],
-  \     ['readonly', 'filename', 'modified', 'ale'],
+  \     ['gitbranch', 'readonly', 'filename', 'modified', 'ale'],
   \   ]
   \ },
   \ 'component_function': {
-  \   'ale': 'ALEGetStatusLine'
+  \   'ale': 'ALEGetStatusLine',
+  \   'gitbranch': 'gitbranch#name'
   \ }
 \ }
 
