@@ -1,26 +1,30 @@
 {
-    "terminal.integrated.shell.osx": "/usr/local/bin/fish",
-    "window.zoomLevel": 1,
-    "workbench.startupEditor": "newUntitledFile",
-    "vim.useSystemClipboard": true,
-    "editor.minimap.enabled": false,
-    "go.useLanguageServer": true,
-    "go.languageServerExperimentalFeatures": {
-        "format": true,
-        "autoComplete": true,
-        "rename": true,
-        "goToDefinition": true,
-        "hover": true,
-        "signatureHelp": true,
-        "goToTypeDefinition": true,
-        "goToImplementation": true,
-        "documentSymbols": true,
-        "workspaceSymbols": true,
-        "findReferences": true,
-        "diagnostics": true,
-        "documentLink": true
-    },
-    "breadcrumbs.enabled": true,
-    "diffEditor.ignoreTrimWhitespace": false,
-    "git.autofetch": true
+  "terminal.integrated.shell.osx": "/usr/local/bin/fish",
+  "window.zoomLevel": 1,
+  "workbench.startupEditor": "none",
+  "editor.minimap.enabled": false,
+  "vim.useSystemClipboard": true,
+  "go.useLanguageServer": true,
+  "go.languageServerExperimentalFeatures": {
+    "format": true,
+    "autoComplete": true,
+    "rename": true,
+    "goToDefinition": true,
+    "hover": true,
+    "signatureHelp": true,
+    "goToTypeDefinition": true,
+    "goToImplementation": true,
+    "documentSymbols": true,
+    "workspaceSymbols": true,
+    "findReferences": true,
+    "diagnostics": true,
+    "documentLink": true
+  },
+  "breadcrumbs.enabled": true,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "git.autofetch": true,
+  "eslint.packageManager": "yarn",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
 }
