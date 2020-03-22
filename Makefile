@@ -17,6 +17,4 @@ ifeq ($(shell uname),Darwin)
 	# Brew
 	ln -snf ~/dotfiles/.Brewfile ~/.Brewfile
 	ln -snf ~/dotfiles/.Brewfile.lock.json ~/.Brewfile.lock.json
-	curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh | bash
-	brew bundle --global
 endif
