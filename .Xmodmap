@@ -4,4 +4,3 @@
 remove Lock = Caps_Lock
 add Control = Caps_Lock
 keysym Caps_Lock = Control_L
-
