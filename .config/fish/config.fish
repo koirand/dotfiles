@@ -12,13 +12,16 @@ alias g="git"
 alias k="kubectl"
 alias y="yarn"
 
-# cheetsheet alias
+# cheetsheet
 alias cs="vim ~/Projects/cheetsheet/cheet-sheet.md"
 
-# memo alias
+# memo
 alias memo="vim + ~/Documents/memo.txt"
 
-# go env
+# MacOS
+alias launchpad-reset="defaults write com.apple.dock ResetLaunchPad -bool true;killall Dock"
+
+# go
 set -gx GOPATH $HOME/go
 set -gx PATH $GOPATH/bin $PATH
 set -gx GO111MODULE on
