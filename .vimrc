@@ -177,10 +177,8 @@ set laststatus=2
 "----------------------------------------------------------------------
 if has('mac')
     set gfn=Menlo-Regular:h14
-
 elseif has('unix')
     set gfn=Ricty\ 12
-
 elseif has('win32') || has('win64') || has('win32unix')
     set gfn=Ricty:h12
     set renderoptions=type:directx,renmode:5
@@ -203,10 +201,6 @@ endif
 "----------------------------------------------------------------------
 " macro
 "----------------------------------------------------------------------
-command! Xmlformat :%s/></>\r</g | :%s/$//g | filetype indent on | setf xml | normal gg=G
-command! Chrome :! start chrome %
-command! CheetSheet :e ~/.cheetsheet.md
-command! Paste read!pbpaste
 nnoremap <silent> <F1> :<C-u>sp ~/.vimrc<CR>
 autocmd BufNewFile,BufRead memo.txt $r !echo '--------------------------------------------------------------------------------' && date
 
@@ -241,11 +235,10 @@ let g:lightline = {
   \ 'active': {
   \   'left': [
   \     ['mode', 'paste'],
-  \     ['gitbranch', 'readonly', 'filename', 'modified', 'ale'],
+  \     ['gitbranch', 'readonly', 'filename', 'modified'],
   \   ]
   \ },
   \ 'component_function': {
-  \   'ale': 'ALEGetStatusLine',
   \   'gitbranch': 'gitbranch#name'
   \ }
 \ }
@@ -258,46 +251,13 @@ let g:table_mode_corner = '|'
 let g:table_mode_auto_align = 0
 
 "----------------------------------------------------------------------
-" sonictemplate-vim
-"----------------------------------------------------------------------
-let g:sonictemplate_vim_template_dir = '$HOME/.vim/template'
-
-"----------------------------------------------------------------------
 " winresiaer
 "----------------------------------------------------------------------
 let g:winresizer_vert_resize = 5
 let g:winresizer_horiz_resize = 3
 
 "----------------------------------------------------------------------
-" vim-javascript
-"----------------------------------------------------------------------
-let g:javascript_plugin_flow = 1
-
-"----------------------------------------------------------------------
-" vim-go
-"----------------------------------------------------------------------
-let g:go_fmt_command = "goimports"
-let g:go_snippet_case_type = "camelcase"
-let g:go_list_type = "quickfix"
-autocmd FileType go nmap <leader>r <Plug>(go-run)
-autocmd FileType go nmap <leader>b <Plug>(go-build)
-autocmd FileType go nmap <leader>t <Plug>(go-test)
-autocmd FileType go nmap <Leader>c <Plug>(go-coverage-toggle)
-
-"----------------------------------------------------------------------
-" ale
-"----------------------------------------------------------------------
-let g:ale_fixers = {'javascript': ['prettier_standard']}
-let g:ale_fix_on_save = 1
-let g:ale_set_loclist = 0
-let g:ale_set_quickfix = 1
-let g:ale_open_list = 1
-let g:ale_javascript_prettier_use_local_config = 1
-let g:ale_sign_column_always = 1
-
-"----------------------------------------------------------------------
 " color scheme
 "----------------------------------------------------------------------
 set background=dark
 colorscheme tokyo-metro
-
