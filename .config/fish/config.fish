@@ -13,7 +13,7 @@ alias k="kubectl"
 alias y="yarn"
 
 # cheetsheet
-alias cs="vim ~/Projects/cheetsheet/cheet-sheet.md"
+alias cs="vim ~/src/cheetsheet/cheet-sheet.md"
 
 # memo
 alias memo="vim + ~/Documents/memo.txt"
