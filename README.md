@@ -1,7 +1,7 @@
 dotfiles
 ===
 
-@koirand 's dotfiles
+@koirand's dotfiles.
 
 ## Install
 
