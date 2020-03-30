@@ -6,8 +6,8 @@ if not functions -q fisher
 end
 
 # short alias
-alias c="docker-compose"
 alias d="docker"
+alias dc="docker-compose"
 alias g="git"
 alias k="kubectl"
 alias y="yarn"

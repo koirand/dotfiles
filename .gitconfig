@@ -3,6 +3,7 @@
 	whitespace = cr-at-eol
 	filemode = false
 	editor = vim
+	excludesfile = ~/.gitignore_global
 [user]
 	name = koirand
 	email = koirand.jp@gmail.com
