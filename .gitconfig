@@ -4,7 +4,7 @@
 	editor = vim
 	excludesfile = ~/.gitignore_global
 [user]
-	name = koirand
+	name = Kazuki Koide
 	email = koirand.jp@gmail.com
 [fetch]
 	prune = true

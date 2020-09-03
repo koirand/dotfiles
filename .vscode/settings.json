@@ -21,10 +21,13 @@
     "documentLink": true
   },
   "breadcrumbs.enabled": true,
-  "diffEditor.ignoreTrimWhitespace": false,
+  "diffEditor.ignoreTrimWhitespace": true,
   "git.autofetch": true,
   "eslint.packageManager": "yarn",
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
-  }
+  },
+  "sqltools.useNodeRuntime": true,
+  "extensions.ignoreRecommendations": false,
+  "editor.suggestSelection": "first"
 }
