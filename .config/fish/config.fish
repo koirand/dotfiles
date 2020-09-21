@@ -11,6 +11,7 @@ alias dc="docker-compose"
 alias g="git"
 alias k="kubectl"
 alias y="yarn"
+alias t="terraform"
 
 # cheetsheet
 alias cs="vim ~/src/cheetsheet/cheet-sheet.md"
@@ -21,7 +22,10 @@ alias memo="vim + ~/Documents/memo.txt"
 # MacOS
 alias launchpad-reset="defaults write com.apple.dock ResetLaunchPad -bool true;killall Dock"
 
+# nodebrew
+set -gx PATH $HOME/.nodebrew/current/bin $PATH
 # go
 set -gx GOPATH $HOME/go
 set -gx PATH $GOPATH/bin $PATH
 set -gx GO111MODULE on
+
