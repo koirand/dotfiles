@@ -14,7 +14,7 @@ alias y="yarn"
 alias t="terraform"
 
 # cheetsheet
-alias cs="vim ~/src/cheetsheet/cheet-sheet.md"
+alias cs="vim ~/src/github.com/koirand/cheetsheet/cheet-sheet.md"
 
 # memo
 alias memo="vim + ~/Documents/memo.txt"
@@ -28,4 +28,12 @@ set -gx PATH $HOME/.nodebrew/current/bin $PATH
 set -gx GOPATH $HOME/go
 set -gx PATH $GOPATH/bin $PATH
 set -gx GO111MODULE on
+
+# oh-my-fish/plugin-peco
+function fish_user_key_bindings
+  bind \cr peco_select_history # Bind for prco history to Ctrl+r
+end
+
+# decors/fish-ghq
+set GHQ_SELECTOR peco
 

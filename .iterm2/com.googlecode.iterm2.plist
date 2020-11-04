@@ -1150,6 +1150,10 @@
 	<array>
 		<string>3.3.7</string>
 		<string>3.3.9</string>
+		<string>3.3.8</string>
+		<string>3.3.11</string>
+		<string>3.3.7</string>
+		<string>3.3.12</string>
 	</array>
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
@@ -1962,6 +1966,6 @@
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.3.9</string>
+	<string>3.3.12</string>
 </dict>
 </plist>
