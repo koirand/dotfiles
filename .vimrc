@@ -211,7 +211,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'cohama/lexima.vim'
 Plug 'dhruvasagar/vim-table-mode'
-Plug 'editorconfig/editorconfig-vim'
+Plug 'sgur/vim-editorconfig'
 Plug 'itchyny/vim-gitbranch'
 Plug 'itchyny/lightline.vim'
 Plug 'koirand/tokyo-metro.vim'
