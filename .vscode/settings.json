@@ -29,5 +29,6 @@
   },
   "sqltools.useNodeRuntime": true,
   "extensions.ignoreRecommendations": false,
-  "editor.suggestSelection": "first"
+  "editor.suggestSelection": "first",
+  "workbench.colorTheme": "GitHub Dark"
 }

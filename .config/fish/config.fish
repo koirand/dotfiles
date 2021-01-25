@@ -22,6 +22,9 @@ alias memo="vim + ~/Documents/memo.txt"
 # MacOS
 alias launchpad-reset="defaults write com.apple.dock ResetLaunchPad -bool true;killall Dock"
 
+# kubectx
+alias kc="kubectx | peco | xargs kubectx"
+
 # nodebrew
 # set -gx PATH $HOME/.nodebrew/current/bin $PATH
 # go
