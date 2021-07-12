@@ -16,4 +16,5 @@
 	default = current
 [ghq]
 	root = ~/src
-
+[diff]
+  tool = vimdiff
