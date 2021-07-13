@@ -3,14 +3,8 @@
 "----------------------------------------------------------------------
 set encoding=utf-8
 scriptencoding utf-8
-set fileencodings=utf-8,cp932,euc-jp,latin1
-set fileformat=unix
-command! Cp932 edit ++enc=cp932
-command! Eucjp edit ++enc=euc-jp
-command! Iso2022jp edit ++enc=iso-2022-jp
-command! Utf8 edit ++enc=utf-8
-command! Jis iso2022jp
-command! Sjis cp932
+set fileencodings=utf-8,iso-2022-jp,cp932,sjis,euc-jp,latin1
+set fileformats=unix,dos,mac
 
 "----------------------------------------------------------------------
 " looks
@@ -65,8 +59,7 @@ set backspace=indent,eol,start
 " move
 "----------------------------------------------------------------------
 noremap 1 ^
-noremap <C-j> 5j
-noremap <C-k> 5k
+noremap * *N
 nnoremap j gj
 nnoremap k gk
 nnoremap gj j
@@ -112,8 +105,7 @@ else
 endif
 inoremap <C-v> <C-r>*
 cnoremap <C-v> <C-r>*
-command! Paste read !pbpaste
-command! -range Copy <line1>,<line2>write !pbcopy
+xnoremap p "_dP
 
 "----------------------------------------------------------------------
 " search
@@ -153,9 +145,8 @@ set autoread
 set autowrite
 set splitbelow
 set splitright
-nnoremap <silent> <C-TAB> :bn<CR>
-inoremap <silent> <C-TAB> <ESC>:bn<CR>
-"au BufEnter * execute ':lcd ' fnameescape(expand('%:p:h'))
+nnoremap <silent> <C-j> :bn<CR>
+nnoremap <silent> <C-k> :bp<CR>
 
 "----------------------------------------------------------------------
 " print
@@ -199,9 +190,8 @@ if has('gui_running')
 endif
 
 "----------------------------------------------------------------------
-" macro
+" memo
 "----------------------------------------------------------------------
-nnoremap <silent> <F1> :<C-u>sp ~/.vimrc<CR>
 autocmd BufNewFile,BufRead memo.txt $r !echo '--------------------------------------------------------------------------------' && date
 
 "----------------------------------------------------------------------
@@ -209,14 +199,12 @@ autocmd BufNewFile,BufRead memo.txt $r !echo '----------------------------------
 "----------------------------------------------------------------------
 call plug#begin('~/.vim/plugged')
 
+"Auto close parentheses and repeat by dot dot dot...
 Plug 'cohama/lexima.vim'
-Plug 'dhruvasagar/vim-table-mode'
 Plug 'sgur/vim-editorconfig'
-Plug 'itchyny/vim-gitbranch'
 Plug 'itchyny/lightline.vim'
 Plug 'koirand/tokyo-metro.vim'
 Plug 'scrooloose/nerdtree'
-Plug 'simeji/winresizer'
 Plug 'tpope/vim-surround'
 
 call plug#end()
@@ -224,7 +212,6 @@ call plug#end()
 "----------------------------------------------------------------------
 " NERDTree
 "----------------------------------------------------------------------
-nnoremap <silent> <F2> :<C-u>NERDTreeToggle<CR>
 let NERDTreeShowHidden = 1
 
 "----------------------------------------------------------------------
@@ -235,29 +222,13 @@ let g:lightline = {
   \ 'active': {
   \   'left': [
   \     ['mode', 'paste'],
-  \     ['gitbranch', 'readonly', 'filename', 'modified'],
+  \     ['readonly', 'filename', 'modified'],
   \   ]
-  \ },
-  \ 'component_function': {
-  \   'gitbranch': 'gitbranch#name'
   \ }
 \ }
-
-"----------------------------------------------------------------------
-" vim-table-mode
-"----------------------------------------------------------------------
-nnoremap <silent> <C-t> :<C-u>TableModeToggle<CR>
-let g:table_mode_corner = '|'
-let g:table_mode_auto_align = 0
-
-"----------------------------------------------------------------------
-" winresiaer
-"----------------------------------------------------------------------
-let g:winresizer_vert_resize = 5
-let g:winresizer_horiz_resize = 3
 
 "----------------------------------------------------------------------
 " color scheme
 "----------------------------------------------------------------------
 set background=dark
-colorscheme tokyo-metro
+silent! colorscheme tokyo-metro
