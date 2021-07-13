@@ -14,7 +14,7 @@ alias y="yarn"
 alias t="terraform"
 
 # cheetsheet
-alias cs="vim ~/Documents/cheetsheet/cheet-sheet.md"
+alias cs="vim ~/src/github.com/koirand/cheetsheet/cheet-sheet.md"
 
 # memo
 alias memo="vim + ~/Documents/memo.txt"
