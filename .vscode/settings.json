@@ -1,9 +1,18 @@
 {
-  "terminal.integrated.shell.osx": "/usr/local/bin/fish",
+  "terminal.integrated.profiles.osx": {
+    "fish (login)": {
+      "path": "/usr/local/bin/fish",
+      "args": [
+        "-l"
+      ]
+    }
+  },
   "window.zoomLevel": 1,
   "workbench.startupEditor": "none",
   "editor.minimap.enabled": false,
   "vim.useSystemClipboard": true,
+  "vim.vimrc.enable": true,
+  "vim.vimrc.path": "/Users/koirand/.vimrc",
   "go.useLanguageServer": true,
   "breadcrumbs.enabled": true,
   "diffEditor.ignoreTrimWhitespace": true,
@@ -16,5 +25,17 @@
   "extensions.ignoreRecommendations": false,
   "editor.suggestSelection": "first",
   "editor.renderWhitespace": "all",
-  "workbench.colorTheme": "GitHub Dark"
+  "workbench.colorTheme": "GitHub Dark",
+  "editor.wordWrap": "off",
+  "go.toolsManagement.autoUpdate": true,
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter.notebook.ipynb"
+  },
+  "explorer.confirmDelete": false,
+  "editor.tabSize": 8,
+  "editor.cursorStyle": "line",
+  "editor.insertSpaces": false,
+  "editor.lineNumbers": "on",
+  "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+  "editor.cursorSurroundingLines": 3
 }
