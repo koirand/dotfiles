@@ -25,6 +25,8 @@ augroup number
 augroup END
 set ambiwidth=double
 set nowrap
+set nolist
+set listchars=tab:»-,space:･,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
 
 "----------------------------------------------------------------------
 " indent
@@ -202,14 +204,13 @@ autocmd BufNewFile,BufRead memo.txt $r !echo '----------------------------------
 call plug#begin('~/.vim/plugged')
 
 "Auto close parentheses and repeat by dot dot dot...
-Plug 'cohama/lexima.vim'
 Plug 'sgur/vim-editorconfig'
 Plug 'itchyny/lightline.vim'
 Plug 'koirand/tokyo-metro.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
-
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"Plug 'hashivim/vim-terraform'
 
 call plug#end()
 
@@ -219,6 +220,11 @@ call plug#end()
 let NERDTreeShowHidden = 1
 
 "----------------------------------------------------------------------
+" vim-terraform
+"----------------------------------------------------------------------
+let g:terraform_fmt_on_save = 1
+
+"----------------------------------------------------------------------
 " lightline
 "----------------------------------------------------------------------
 let g:lightline = {
@@ -226,7 +232,7 @@ let g:lightline = {
   \ 'active': {
   \   'left': [
   \     ['mode', 'paste'],
-  \     ['readonly', 'filename', 'modified'],
+  \     ['readonly', 'relativepath', 'modified'],
   \   ]
   \ }
 \ }
