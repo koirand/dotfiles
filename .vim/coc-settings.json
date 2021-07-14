@@ -1,0 +1,12 @@
+{
+  "coc.preferences.formatOnSaveFiletypes": [
+    "json",
+    "go",
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "suggest.keepCompleteopt": true,
+  "eslint.autoFixOnSave": true
+}

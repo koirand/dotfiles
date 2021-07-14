@@ -16,8 +16,9 @@ set t_ZR=[23m
 set termguicolors
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-set number
-set numberwidth=3
+" set number
+" set numberwidth=3
+set signcolumn=yes
 augroup number
     autocmd!
     autocmd FileType text setlocal nonumber
@@ -126,6 +127,7 @@ nnoremap <silent> <Esc><Esc> :<C-u>nohlsearch<CR>
 " system file
 "----------------------------------------------------------------------
 set nobackup
+" set nowritebackup
 "set noswapfile
 set noundofile
 set directory=~/.vim/tmp
@@ -135,7 +137,6 @@ set directory=~/.vim/tmp
 "----------------------------------------------------------------------
 set iminsert=0
 set imsearch=1
-inoremap <silent> <ESC> <ESC>:set iminsert=0<CR>
 
 "----------------------------------------------------------------------
 " buffer
@@ -162,6 +163,7 @@ set printoptions+=wrap:y
 " statusline
 "----------------------------------------------------------------------
 set laststatus=2
+set statusline^=%{coc#status()}
 
 "----------------------------------------------------------------------
 " font
@@ -207,6 +209,8 @@ Plug 'koirand/tokyo-metro.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
 
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 call plug#end()
 
 "----------------------------------------------------------------------
@@ -226,6 +230,23 @@ let g:lightline = {
   \   ]
   \ }
 \ }
+
+"----------------------------------------------------------------------
+" coc-nvim
+"----------------------------------------------------------------------
+set updatetime=300
+set shortmess+=c
+set completeopt=menuone,noinsert
+
+" select menu with enter or tab key
+inoremap <expr><cr>  pumvisible() ? "<C-y>" : "<cr>"
+inoremap <expr><tab>  pumvisible() ? "<C-y>" : "<tab>"
+
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
 
 "----------------------------------------------------------------------
 " color scheme
