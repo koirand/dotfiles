@@ -18,3 +18,5 @@
 	root = ~/src
 [diff]
   tool = vimdiff
+[init]
+	defaultBranch = main
