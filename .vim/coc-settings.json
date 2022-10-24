@@ -6,8 +6,11 @@
     "javascriptreact",
     "typescript",
     "typescriptreact",
-    "terraform"
+    "terraform",
+    "html",
+    "python"
   ],
+  "coc.preferences.willSaveHandlerTimeout": 5000,
   "suggest.keepCompleteopt": true,
   "eslint.autoFixOnSave": true,
   "languageserver": {
@@ -22,6 +25,33 @@
       ],
       "initializationOptions": {},
       "settings": {}
+    },
+    "golang": {
+      "command": "gopls",
+      "rootPatterns": [
+        "go.work",
+        "go.mod",
+        ".vim/",
+        ".git/",
+        ".hg/"
+      ],
+      "filetypes": [
+        "go"
+      ],
+      "initializationOptions": {
+        "usePlaceholders": true
+      }
     }
-  }
+  },
+  "html.filetypes": [
+    "html",
+    "liquid"
+  ],
+  "html.format.enable": false,
+  "tailwindCSS.htmlLanguages": [
+    "html",
+    "liquid"
+  ],
+  "python.pythonPath": "python",
+  "python.formatting.provider": "black"
 }
