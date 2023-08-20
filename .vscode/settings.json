@@ -7,7 +7,6 @@
       ]
     }
   },
-  "window.zoomLevel": 1,
   "workbench.startupEditor": "none",
   "editor.minimap.enabled": false,
   "vim.useSystemClipboard": true,
@@ -37,5 +36,6 @@
   "editor.insertSpaces": false,
   "editor.lineNumbers": "on",
   "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
-  "editor.cursorSurroundingLines": 3
+  "editor.cursorSurroundingLines": 3,
+  "window.zoomLevel": 1
 }
