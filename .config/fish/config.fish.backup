@@ -30,6 +30,7 @@ set -gx GOPATH $HOME/go
 set -gx PATH $GOPATH/bin $PATH
 set -gx GO111MODULE on
 
+
 # oh-my-fish/plugin-peco
 function fish_user_key_bindings
   bind \cr peco_select_history # Bind for prco history to Ctrl+r
@@ -38,8 +39,12 @@ end
 # decors/fish-ghq
 set GHQ_SELECTOR peco
 
-# asdf
-source /usr/local/opt/asdf/libexec/asdf.fish
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/kazuki.koide/Downloads/google-cloud-sdk/path.fish.inc' ]; . '/Users/kazuki.koide/Downloads/google-cloud-sdk/path.fish.inc'; end
+if [ -f '/Users/koirand/google-cloud-sdk/path.fish.inc' ]; . '/Users/koirand/google-cloud-sdk/path.fish.inc'; end
+
+# flutter
+set -gx PATH $HOME/src/github.com/flutter/flutter/bin $PATH
+
+# asdf
+source /usr/local/opt/asdf/libexec/asdf.fish
