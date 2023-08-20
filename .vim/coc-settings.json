@@ -11,7 +11,6 @@
     "python"
   ],
   "coc.preferences.willSaveHandlerTimeout": 5000,
-  "suggest.keepCompleteopt": true,
   "eslint.autoFixOnSave": true,
   "languageserver": {
     "terraform": {
@@ -52,6 +51,9 @@
     "html",
     "liquid"
   ],
+  "javascript.suggestionActions.enabled": false,
+  "typescript.suggest.enabled": false,
   "python.pythonPath": "python",
-  "python.formatting.provider": "black"
+  "python.formatting.provider": "black",
+  "python.formatting.blackPath": "~/.asdf/shims/black"
 }
