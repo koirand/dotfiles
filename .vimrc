@@ -5,6 +5,7 @@ set encoding=utf-8
 scriptencoding utf-8
 set fileencodings=utf-8,iso-2022-jp,cp932,sjis,euc-jp,latin1
 set fileformats=unix,dos,mac
+set diffopt+=iwhiteall
 
 "----------------------------------------------------------------------
 " looks
