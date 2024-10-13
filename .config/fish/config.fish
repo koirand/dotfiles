@@ -13,6 +13,14 @@ alias k="kubectl"
 alias y="yarn"
 alias t="terraform"
 
+# homebrew
+set -gx PATH /opt/homebrew/bin $PATH
+
+# node
+set -gx PATH /opt/homebrew/opt/node@20/bin $PATH
+set -gx LDFLAGS "-L/opt/homebrew/opt/node@20/lib"
+set -gx CPPFLAGS "-I/opt/homebrew/opt/node@20/include"
+
 # cheetsheet
 alias cs="vim ~/src/github.com/koirand/cheetsheet/cheet-sheet.md"
 
@@ -30,16 +38,19 @@ set -gx GOPATH $HOME/go
 set -gx PATH $GOPATH/bin $PATH
 set -gx GO111MODULE on
 
-# oh-my-fish/plugin-peco
-function fish_user_key_bindings
-  bind \cr peco_select_history # Bind for prco history to Ctrl+r
+function peco-history
+    set cmd (history | peco --query (commandline -b))
+    if test -n "$cmd"
+        commandline -r "$cmd"
+    end
 end
+bind \cr 'peco-history'
 
-# decors/fish-ghq
-set GHQ_SELECTOR peco
-
-# asdf
-source /usr/local/opt/asdf/libexec/asdf.fish
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/kazuki.koide/Downloads/google-cloud-sdk/path.fish.inc' ]; . '/Users/kazuki.koide/Downloads/google-cloud-sdk/path.fish.inc'; end
+function peco-git
+    set selected_dir (ghq list --full-path | peco --query (commandline -b))
+    if test -n "$selected_dir"
+        commandline -r "cd $selected_dir"
+        commandline -f execute
+    end
+end
+bind \cg 'peco-git'
