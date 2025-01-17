@@ -38,6 +38,11 @@ set -gx GOPATH $HOME/go
 set -gx PATH $GOPATH/bin $PATH
 set -gx GO111MODULE on
 
+# uv
+if type -q uv
+  uv generate-shell-completion fish | source
+end
+
 # peco
 function peco-history
     set cmd (history | peco --query (commandline -b))
