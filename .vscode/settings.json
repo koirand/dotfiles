@@ -18,7 +18,7 @@
   "git.autofetch": true,
   "eslint.packageManager": "yarn",
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": "explicit"
   },
   "sqltools.useNodeRuntime": true,
   "extensions.ignoreRecommendations": false,
