@@ -76,7 +76,7 @@ prompt pure
 # ---------------------------------------------------------------------------
 # fzf
 # ---------------------------------------------------------------------------
-export FZF_DEFAULT_OPTS="--height 60% --layout reverse --border --cycle"
+export FZF_DEFAULT_OPTS="--height 60% --layout reverse --border --cycle --no-preview"
 
 # C-r: history / C-t: file / M-c: cd
 source <(fzf --zsh)
