@@ -12,6 +12,8 @@ install: rmdir
 	# vim
 	ln -snf ~/dotfiles/.vim ~/.vim
 	ln -snf ~/dotfiles/.vimrc ~/.vimrc
+	# zsh
+	ln -snf ~/dotfiles/.zshrc ~/.zshrc
 	# fish
 	mkdir -p ~/.config
 	ln -snf ~/dotfiles/.config/fish ~/.config/fish
