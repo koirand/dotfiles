@@ -12,7 +12,7 @@ export GO111MODULE=on
 # rust
 [ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 
-# local
+# local bin
 export PATH="$HOME/.local/bin:$PATH"
 
 # ---------------------------------------------------------------------------
@@ -25,6 +25,10 @@ alias g="git"
 alias k="kubectl"
 alias y="yarn"
 alias t="terraform"
+
+# ls
+export CLICOLOR=1
+alias ll="ls -al"
 
 # cheetsheet
 alias cs="vim ~/src/github.com/koirand/cheetsheet/cheet-sheet.md"
