@@ -82,11 +82,12 @@ export FZF_DEFAULT_OPTS="--height 60% --layout reverse --border --cycle"
 source <(fzf --zsh)
 # C-t is reassigned to fzf-worktree below, so move the file widget out of the way
 bindkey '^x^f' fzf-file-widget
+# M-c depends on the terminal sending Esc+ for the option key, so bind an alias
+bindkey '^x^d' fzf-cd-widget
 
 fzf-git() {
     local selected_dir
-    selected_dir=$(ghq list --full-path | fzf --query "$LBUFFER" \
-        --preview '[ -f {}/README.md ] && head -200 {}/README.md || ls -la {}')
+    selected_dir=$(ghq list --full-path | fzf --query "$LBUFFER")
     if [ -n "$selected_dir" ]; then
         BUFFER="cd $selected_dir"
         zle accept-line
@@ -98,9 +99,7 @@ bindkey '^g' fzf-git
 
 fzf-worktree() {
     local selected_dir
-    selected_dir=$(git worktree list | fzf --query "$LBUFFER" \
-        --preview 'git -C {1} log --oneline --graph --decorate -20' \
-        | awk '{print $1}')
+    selected_dir=$(git worktree list | fzf --query "$LBUFFER" | awk '{print $1}')
     if [ -n "$selected_dir" ]; then
         BUFFER="cd $selected_dir"
         zle accept-line
