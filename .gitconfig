@@ -5,13 +5,11 @@
 	excludesfile = ~/.gitignore_global
 [user]
 	name = Kazuki Koide
-	email = koirand.jp@gmail.com
+	email = 17229643+koirand@users.noreply.github.com
 [fetch]
 	prune = true
 [pull]
 	ff = only
-[merge]
-	ff = false
 [push]
 	default = current
 [ghq]
