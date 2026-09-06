@@ -16,16 +16,12 @@ alias t="terraform"
 # homebrew
 set -gx PATH /opt/homebrew/bin $PATH
 
-# node
-set -gx PATH /opt/homebrew/opt/node@20/bin $PATH
-set -gx LDFLAGS "-L/opt/homebrew/opt/node@20/lib"
-set -gx CPPFLAGS "-I/opt/homebrew/opt/node@20/include"
-
 # cheetsheet
 alias cs="vim ~/src/github.com/koirand/cheetsheet/cheet-sheet.md"
 
 # memo
 alias memo="vim + ~/Documents/memo.txt"
+alias todo="vim + ~/Documents/todo.txt"
 
 # MacOS
 alias launchpad-reset="defaults write com.apple.dock ResetLaunchPad -bool true;killall Dock"
@@ -33,10 +29,16 @@ alias launchpad-reset="defaults write com.apple.dock ResetLaunchPad -bool true;k
 # kubectx
 alias kc="kubectx | peco | xargs kubectx"
 
+# LibreOffice
+alias libreoffice="/Applications/LibreOffice.app/Contents/MacOS/soffice"
+
 # go
 set -gx GOPATH $HOME/go
 set -gx PATH $GOPATH/bin $PATH
 set -gx GO111MODULE on
+
+# Rust
+source "$HOME/.cargo/env.fish"
 
 # uv
 if type -q uv
@@ -60,3 +62,14 @@ function peco-git
     end
 end
 bind \cg 'peco-git'
+
+function peco-worktree
+    set selected_dir (git worktree list | awk '{print $1}' | peco --query (commandline -b))
+    if test -n "$selected_dir"
+        commandline -r "cd $selected_dir"
+        commandline -f execute
+    end
+end
+bind \ct 'peco-worktree'
+
+export PATH="$HOME/.local/bin:$PATH"
