@@ -37,7 +37,7 @@ alias todo="vim + ~/Documents/todo.txt"
 alias launchpad-reset="defaults write com.apple.dock ResetLaunchPad -bool true;killall Dock"
 
 # kubectx
-alias kc="kubectx | peco | xargs kubectx"
+alias kc="kubectx | fzf | xargs kubectx"
 
 # LibreOffice
 alias libreoffice="/Applications/LibreOffice.app/Contents/MacOS/soffice"
@@ -74,43 +74,41 @@ autoload -Uz promptinit && promptinit
 prompt pure
 
 # ---------------------------------------------------------------------------
-# peco
+# fzf
 # ---------------------------------------------------------------------------
-peco-history() {
-    local cmd
-    cmd=$(fc -rl -n 1 | awk '!a[$0]++' | peco --query "$LBUFFER")
-    if [ -n "$cmd" ]; then
-        BUFFER="$cmd"
-        CURSOR=$#BUFFER
-    fi
-    zle reset-prompt
-}
-zle -N peco-history
-bindkey '^r' peco-history
+export FZF_DEFAULT_OPTS="--height 60% --layout reverse --border --cycle"
 
-peco-git() {
+# C-r: history / C-t: file / M-c: cd
+source <(fzf --zsh)
+# C-t is reassigned to fzf-worktree below, so move the file widget out of the way
+bindkey '^x^f' fzf-file-widget
+
+fzf-git() {
     local selected_dir
-    selected_dir=$(ghq list --full-path | peco --query "$LBUFFER")
+    selected_dir=$(ghq list --full-path | fzf --query "$LBUFFER" \
+        --preview '[ -f {}/README.md ] && head -200 {}/README.md || ls -la {}')
     if [ -n "$selected_dir" ]; then
         BUFFER="cd $selected_dir"
         zle accept-line
     fi
     zle reset-prompt
 }
-zle -N peco-git
-bindkey '^g' peco-git
+zle -N fzf-git
+bindkey '^g' fzf-git
 
-peco-worktree() {
+fzf-worktree() {
     local selected_dir
-    selected_dir=$(git worktree list | awk '{print $1}' | peco --query "$LBUFFER")
+    selected_dir=$(git worktree list | fzf --query "$LBUFFER" \
+        --preview 'git -C {1} log --oneline --graph --decorate -20' \
+        | awk '{print $1}')
     if [ -n "$selected_dir" ]; then
         BUFFER="cd $selected_dir"
         zle accept-line
     fi
     zle reset-prompt
 }
-zle -N peco-worktree
-bindkey '^t' peco-worktree
+zle -N fzf-worktree
+bindkey '^t' fzf-worktree
 
 # ---------------------------------------------------------------------------
 # plugins (must be loaded at the end)
