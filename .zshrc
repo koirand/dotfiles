@@ -37,9 +37,6 @@ alias cs="vim ~/src/github.com/koirand/cheetsheet/cheet-sheet.md"
 alias memo="vim + ~/Documents/memo.txt"
 alias todo="vim + ~/Documents/todo.txt"
 
-# MacOS
-alias launchpad-reset="defaults write com.apple.dock ResetLaunchPad -bool true;killall Dock"
-
 # kubectx
 alias kc="kubectx | fzf | xargs kubectx"
 
