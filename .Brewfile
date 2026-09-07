@@ -10,3 +10,5 @@ brew "tree"
 brew "wget"
 brew "zsh-autosuggestions"
 brew "zsh-syntax-highlighting"
+
+cask "maccy"
