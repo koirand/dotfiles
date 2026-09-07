@@ -1,6 +1,5 @@
 rmdir:
 	rm -rf ~/.vim
-	rm -rf ~/.config/fish
 	rm -rf ~/.config/karabiner
 
 install: rmdir
@@ -14,9 +13,6 @@ install: rmdir
 	ln -snf ~/dotfiles/.vimrc ~/.vimrc
 	# zsh
 	ln -snf ~/dotfiles/.zshrc ~/.zshrc
-	# fish
-	mkdir -p ~/.config
-	ln -snf ~/dotfiles/.config/fish ~/.config/fish
 ifeq ($(shell uname),Darwin)
 	# VSCode
 	mkdir -p ~/Library/Application\ Support/Code/User/
@@ -25,5 +21,6 @@ ifeq ($(shell uname),Darwin)
 	ln -snf ~/dotfiles/.Brewfile ~/.Brewfile
 	ln -snf ~/dotfiles/.Brewfile.lock.json ~/.Brewfile.lock.json
 	# karabiner
+	mkdir -p ~/.config
 	ln -snf ~/dotfiles/.config/karabiner ~/.config/karabiner
 endif

@@ -1,10 +1,4 @@
 {
-  "terminal.integrated.profiles.osx": {
-    "fish (login)": {
-      "path": "/usr/local/bin/fish",
-      "args": ["-l"],
-    },
-  },
   "editor.minimap.enabled": false,
   "vim.useSystemClipboard": true,
   "vim.vimrc.enable": true,
