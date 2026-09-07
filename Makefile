@@ -14,7 +14,6 @@ install: rmdir
 ifeq ($(shell uname),Darwin)
 	# Brew
 	ln -snf ~/dotfiles/.Brewfile ~/.Brewfile
-	ln -snf ~/dotfiles/.Brewfile.lock.json ~/.Brewfile.lock.json
 	# karabiner
 	mkdir -p ~/.config
 	ln -snf ~/dotfiles/.config/karabiner ~/.config/karabiner
