@@ -23,8 +23,6 @@ alias d="docker"
 alias dc="docker-compose"
 alias g="git"
 alias k="kubectl"
-alias y="yarn"
-alias t="terraform"
 
 # ls
 export CLICOLOR=1
@@ -36,9 +34,6 @@ alias cs="vim ~/src/github.com/koirand/cheetsheet/cheet-sheet.md"
 # memo
 alias memo="vim + ~/Documents/memo.txt"
 alias todo="vim + ~/Documents/todo.txt"
-
-# kubectx
-alias kc="kubectx | fzf | xargs kubectx"
 
 # LibreOffice
 alias libreoffice="/Applications/LibreOffice.app/Contents/MacOS/soffice"
