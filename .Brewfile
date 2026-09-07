@@ -1,3 +1,4 @@
+brew "direnv"
 brew "fzf"
 brew "gh"
 brew "ghq"
