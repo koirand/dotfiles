@@ -1,0 +1,2 @@
+# nix-direnv: use flake を有効化し、devShell の環境をキャッシュする
+source $HOME/.nix-profile/share/nix-direnv/direnvrc
