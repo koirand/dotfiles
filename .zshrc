@@ -25,7 +25,9 @@ alias g="git"
 alias k="kubectl"
 
 # ls
-export CLICOLOR=1
+# CLICOLOR は BSD ls 専用で GNU ls は無視する。Nix の devShell に入ると
+# ls が GNU coreutils に差し替わるため、両対応の --color=auto を使う。
+alias ls="ls --color=auto"
 alias ll="ls -al"
 
 # cheetsheet
